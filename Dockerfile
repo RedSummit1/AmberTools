@@ -8,6 +8,7 @@ RUN apt-get update && apt-get install -y \
     vim \
     nano \
     curl \
+    git \
     && rm -rf /var/lib/apt/lists/*
 
 RUN wget https://github.com/conda-forge/miniforge/releases/latest/download/Miniforge3-Linux-x86_64.sh -O /tmp/miniforge.sh && \
