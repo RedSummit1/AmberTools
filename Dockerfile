@@ -20,7 +20,8 @@ ENV PATH="/opt/miniforge/bin:${PATH}"
 RUN /bin/bash -c "source /opt/miniforge/etc/profile.d/conda.sh && \
     conda create -n AmberTools25 python=3.12 -y && \
     conda activate AmberTools25 && \
-    conda install dacase::ambertools-dac=25 jupyterlab py3Dmol -y"
+    conda install dacase::ambertools-dac=25 jupyterlab py3Dmol ipykernel -y && \
+    python -m ipykernel install --name AmberTools25 --display-name 'Python (AmberTools25)'"
 
 RUN echo 'source /opt/miniforge/etc/profile.d/conda.sh' >> /root/.bashrc && \
     echo 'conda activate AmberTools25' >> /root/.bashrc && \
@@ -29,4 +30,5 @@ RUN echo 'source /opt/miniforge/etc/profile.d/conda.sh' >> /root/.bashrc && \
 ENV SHELL=/bin/bash
 
 WORKDIR /workspace
+
 CMD ["/bin/bash", "-l"]
