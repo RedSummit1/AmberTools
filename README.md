@@ -6,24 +6,18 @@ Molecular modeling with AmberTools 25, JupyterLab, and GPU support.
 
 ## Quick Commands
 ```bash
-# Build and start
-docker compose up -d
+# Build and start (attached)
+docker compose up
 
-# Stop
+# Stop (Ctrl+C, then)
 docker compose down
-
-# View logs
-docker compose logs -f ambertools
 ```
 
 ---
 
 ## Access JupyterLab
 
-After starting, check logs for the access URL and password:
-```bash
-docker compose logs ambertools
-```
+After starting, you'll see the access URL and password in the terminal output.
 
 Open the URL in your browser (local or remote).
 
@@ -67,4 +61,4 @@ Files sync automatically between both locations.
 
 ---
 
-**Get started**: `docker compose up -d`
+**Get started**: `docker compose up`
