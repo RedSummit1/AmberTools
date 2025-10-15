@@ -1,8 +1,10 @@
 # Igonore hidden files
 .Trash-0/ 
 .ipynb_checkpoints/
+.env
 
 # Ignore everything in the data directory
 /data/*
 # Exceptions
 !/data/**/*.ipynb
+
