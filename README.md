@@ -27,10 +27,6 @@ conda activate AmberTools25
 # Run the test workflow
 echo "Running test workflow..."
 bash test_workflow.sh
-
-# Start JupyterLab
-cd /workspace/AmberTools
-jupyter lab --ip=0.0.0.0 --port=8888 --no-browser --allow-root --NotebookApp.token='' --NotebookApp.password=$(python3 -c "from jupyter_server.auth import passwd; print(passwd('YOUR_PASSWORD'))")
 ```
 
 **Expose Ports:**
@@ -48,8 +44,14 @@ When searching for instances:
 
 Once your instance is running:
 - Click the **"JupyterLab"** button in your Vast.ai instance dashboard
-- Enter your password from the on-start script
 - Start working!
+
+### 4. Select the Correct Kernel
+
+When creating a new notebook in JupyterLab:
+- Click on the kernel name in the top-right corner
+- Select **"Python (AmberTools25)"** from the dropdown
+- This ensures access to py3Dmol and all AmberTools packages
 
 ---
 
@@ -68,7 +70,7 @@ docker compose down
 
 After starting, you'll see the access URL and password in the terminal output.
 
-Open the URL in your browser.
+Open the URL in your browser and enter the password from your `.env` file.
 
 ---
 
@@ -87,7 +89,7 @@ Results appear in `/workspace/AmberTools/data/`
 ## What's Included
 
 - AmberTools 25
-- JupyterLab with AmberTools25 kernel (default)
+- JupyterLab with AmberTools25 kernel
 - py3Dmol for 3D visualization
 - Python 3.12
 - NVIDIA GPU support
